@@ -1,0 +1,12 @@
+{
+    "data": {
+        "magic_number": 0.00,
+        "value": -1,
+        "session": {
+            "id": "1",
+            "user": {
+                "id": "1000"
+            }
+        }
+    }
+}

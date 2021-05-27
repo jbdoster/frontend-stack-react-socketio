@@ -1,0 +1,25 @@
+version: '3'
+services:
+  frontend-server:
+    build:
+      context: ./frontend-server
+    ports:
+      - "3004:3004"
+      # devtools debugger ws
+      - "9229:9229"
+    container_name: frontend-server
+    volumes:
+       - ./frontend-server:/frontend-server
+       - /frontend-server/node_modules
+  web-client:
+    depends_on:
+      - frontend-server
+    build:
+      context: ./web-client
+    ports:
+      - "3000:3000"
+    container_name: web-client
+    stdin_open: true
+    volumes:
+       - ./web-client:/web-client
+       - /web-client/node_modules
